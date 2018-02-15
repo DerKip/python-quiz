@@ -3,10 +3,16 @@ def second_largest(li):
     largest=None
     second_largest=None
     for i in range(len(li)):
-        if largest==None or li[i]>largest:
-            second_largest=largest #second largest initialized with largest value before largest gets updated
+        if largest==None:
             largest=li[i]
-    return third_largest
+        elif li[i]>largest:
+            second_largest=largest
+            largest=li[i]
+        elif li[i]>second_largest:
+            second_largest=li[i]
+    return second_largest
+
+print(second_largest([2,3,4469,6,565]))
 
 
 
